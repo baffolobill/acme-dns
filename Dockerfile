@@ -3,6 +3,7 @@ LABEL maintainer="joona@kuori.org"
 
 RUN apk add --update gcc musl-dev git
 
+ENV CGO_CFLAGS="-D_LARGEFILE64_SOURCE"
 ENV GOPATH /tmp/buildcache
 RUN git clone https://github.com/joohoi/acme-dns /tmp/acme-dns
 WORKDIR /tmp/acme-dns
